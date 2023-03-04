@@ -1,2 +1,2 @@
-# NiceGUI-Examples
+# NiceGUI Examples
 NiceGUI web interface examples
