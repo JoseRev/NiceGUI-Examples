@@ -6,18 +6,22 @@ import pandas as pd
 First case (just gives name of the uploaded file)
 ui.upload(on_upload=lambda e: ui.notify(f'Uploaded {e.name}')).classes('max-w-full')
 """
-
+#.set_content()
+#.clear()
 # Declaracion de Variables
 relacion = dict()
+u1=ui.html('People registered')
 
 # Llamada a la interfaz web nicegui y llamada a funcion, una vez que carga excel
-ui.upload(on_upload=lambda e: ui.html(read_pandas_excel(e.content.read())))
-ui.label('Relacion de personal Inscrito')
+ui.upload(on_upload=lambda e: u1.set_content(read_pandas_excel(e.content.read())))
+ui.label('People registered in the seminar')
+
 
 def read_pandas_excel(f):
     """
     Lectura de Excel y  estructuras de datos
     """
+    ui.html('')
     tabla=''
     print()
     print('People registered:')
